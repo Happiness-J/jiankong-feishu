@@ -94,6 +94,10 @@ sudo systemctl start jiankong-feishu.service
 journalctl -u jiankong-feishu --no-pager -e
 ```
 
+## 效果图
+
+![效果图](screenshot.png)
+
 ## 更新记录
 
 ### v1.0.0 (2026-11-15)

@@ -240,6 +240,10 @@ func buildReport(cfg *Config) string {
 func main() {
 	log.SetOutput(os.Stdout)
 	log.Printf("jiankong-feishu %s 启动", version)
+	if len(os.Args) > 1 && os.Args[1] == "metrics" {
+		serveMetrics()
+		return
+	}
 	cfg := loadConfig()
 	report := buildReport(cfg)
 	if err := sendFeishuCard(cfg.FeishuWebhook, cfg.FeishuSecret, cfg.CustomTitle, report); err != nil {
